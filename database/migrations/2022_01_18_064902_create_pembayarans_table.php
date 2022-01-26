@@ -19,7 +19,7 @@ class CreatePembayaransTable extends Migration
             $table->string("nisn")->nullable();
             $table->string("tgl_bayar");
             $table->string("bln_bayar");
-            $table->string("bln_bayar");
+            $table->string("thn_bayar");
             $table->integer("id_spp")->nullable();
             $table->integer("jumlah_bayar");
             $table->timestamps();

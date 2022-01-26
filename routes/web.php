@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/siswa/index','SiswaController@SiswaIndex');
+Route::post('/siswa/create','SiswaController@SiswaCreate');
+Route::get('/siswa/delete/{id}','SiswaController@SiswaDelete');
