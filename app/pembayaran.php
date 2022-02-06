@@ -11,7 +11,7 @@ class pembayaran extends Model
     protected $fillable = [
         "id_pembayaran",
         "id_petugas",
-        "nisn",
+        "id_siswa",
         "tgl_bayar",
         "bln_bayar",
         "thn_bayar",
@@ -20,4 +20,12 @@ class pembayaran extends Model
     ];
 
     protected $primaryKey = "id_pembayaran";
+
+    public function petugas() {
+        return $this->belongsTo('App\petugas','id_petugas');
+    }
+
+    public function siswa() {
+        return $this->belongsTo('App\siswa','id_siswa');
+    }
 }

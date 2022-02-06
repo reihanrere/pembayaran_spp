@@ -11,11 +11,16 @@ class petugas extends Model
     protected $fillable = [
         "id_petugas",
         "username",
+        "email",
         "password",
         "nama_petugas",
         "level",
     ];
 
     protected $primaryKey = "id_petugas";
+
+    public function pembayaran() {
+        return $this->hasMany('App\pembayaran','id_petugas');
+    }
 
 }
