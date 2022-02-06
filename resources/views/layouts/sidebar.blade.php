@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-    <a class="sidebar-brand brand-logo" href="index.html"><img src="{{asset('assets/images/logo.svg')}}" alt="logo" /></a>
-    <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="{{asset('assets/images/logo-mini.svg')}}" alt="logo" /></a>
+        <a class="sidebar-brand brand-logo" href="/home "><img src="{{asset('assets/images/logo.svg')}}" alt="logo" /></a>
+        <a class="sidebar-brand brand-logo-mini" href="/home"><img src="{{asset('assets/images/logo-mini.svg')}}" alt="logo" /></a>
     </div>
     <ul class="nav">
     <li class="nav-item profile">
@@ -13,7 +13,7 @@
             </div>
             <div class="profile-name">
             <h5 class="mb-0 font-weight-normal">{{auth()->user()->name}}</h5>
-            <span>Gold Member</span>
+            <span>{{auth()->user()->role}}</span>
             </div>
         </div>
         <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>

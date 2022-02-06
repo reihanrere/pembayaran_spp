@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="content-wrapper index-siswa">
+<div class="content-wrapper index-petugas">
     <div class="page-header">
-        <h3 class="page-title">Siswa Tables</h3>
+        <h3 class="page-title">Petugas Tables</h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">Tables</li>
-                <li class="breadcrumb-item active" aria-current="page">Siswa</li>
+                <li class="breadcrumb-item active" aria-current="page">Petugas</li>
             </ol>
         </nav>
     </div>
@@ -29,25 +29,19 @@
                         <table class="table table">
                             <thead>
                                 <tr>
-                                    <th>NISN</th>
-                                    <th>NIS</th>
                                     <th>Nama</th>
-                                    <th>Alamat</th>
-                                    <th>No Telp</th>
+                                    <th>Level</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($siswa as $siswa)
+                                @foreach($petugas as $petugas)
                                 <tr>
-                                    <td>{{$siswa->nisn}}</td>
-                                    <td>{{$siswa->nis}}</td>
-                                    <td>{{$siswa->nama}}</td>
-                                    <td>{{$siswa->alamat}}</td>
-                                    <td>{{$siswa->no_telp}}</td>
+                                    <td>{{$petugas->nama_petugas}}</td>
+                                    <td>{{$petugas->level}}</td>
                                     <td>
-                                        <a class="btn btn-inverse-primary btn-sm" href="/siswa/edit/{{$siswa->id_siswa}}">Update</a>
-                                        <a class="btn btn-inverse-danger btn-sm" href="/siswa/delete/{{$siswa->id_siswa}}">Delete</a>
+                                        <a class="btn btn-inverse-primary btn-sm" href="/petugas/edit/{{$petugas->id_petugas}}">Update</a>
+                                        <a class="btn btn-inverse-danger btn-sm" href="/petugas/delete/{{$petugas->id_petugas}}">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -71,21 +65,30 @@
             </button>
         </div>
         <div class="modal-body">
-            <form class="forms-sample" method="POST" action="/siswa/create">
+            <form class="forms-sample" method="POST" action="/petugas/create">
                 @csrf
                 <div class="form-group">
-                    <label for="exampleInputUsername1">NISN</label>
-                    <input type="text" name="nisn" value="{{old('nisn')}}" class="form-control form-control-sm @error('nisn') is-invalid @enderror" id="exampleInputUsername1" required>
-                    @error('nisn')
+                    <label for="exampleInputPassword1">Username</label>
+                    <input type="text" name="username" value="{{old('username')}}" class="form-control form-control-sm @error('username') is-invalid @enderror" id="exampleInputPassword1" required>
+                    @error('username')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">NIS</label>
-                    <input type="text" name="nis" value="{{old('nis')}}" class="form-control form-control-sm @error('nis') is-invalid @enderror" id="exampleInputEmail1" required>
-                    @error('nis')
+                    <label for="exampleInputPassword1">Email</label>
+                    <input type="email" name="email" value="{{old('email')}}" class="form-control form-control-sm @error('email') is-invalid @enderror" id="exampleInputPassword1" required>
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" name="password" value="{{old('password')}}" class="form-control form-control-sm @error('password') is-invalid @enderror" id="exampleInputPassword1" required>
+                    @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -93,25 +96,20 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Nama</label>
-                    <input type="text" name="nama" value="{{old('nama')}}" class="form-control form-control-sm @error('nama') is-invalid @enderror" id="exampleInputPassword1" required>
-                    @error('nama')
+                    <input type="text" name="nama_petugas" value="{{old('nama_petugas')}}" class="form-control form-control-sm @error('nama_petugas') is-invalid @enderror" id="exampleInputPassword1" required>
+                    @error('nama_petugas')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Alamat</label>
-                    <textarea class="form-control @error('alamat') is-invalid @enderror" name="alamat" value="{{old('alamat')}}" id="exampleFormControlTextarea1" rows="3" required></textarea>
-                    @error('alamat')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputConfirmPassword1">No Telp</label>
-                    <input type="text" name="no_telp" value="{{old('no_telp')}}" class="form-control form-control-sm @error('no_telp') is-invalid @enderror" id="exampleInputConfirmPassword1">
+                    <label for="exampleInputConfirmPassword1">Level</label>
+                    <select class="form-control form-control-sm" name="level" @error('level') is-invalid @enderror" id="exampleFormControlSelect3">
+                        <option value=""></option>
+                        <option value="admin">Admin</option>
+                        <option value="petugas">Petugas</option>
+                    </select>
                     @error('no_telp')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

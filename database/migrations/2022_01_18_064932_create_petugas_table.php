@@ -14,9 +14,10 @@ class CreatePetugasTable extends Migration
     public function up()
     {
         Schema::create('petugas', function (Blueprint $table) {
-            $table->integer("id_petugas");
+            $table->id("id_petugas");
             $table->string("username");
             $table->string("password");
+            $table->string("email");
             $table->string("nama_petugas");
             $table->enum("level", ["admin","petugas"]);
             $table->timestamps();
