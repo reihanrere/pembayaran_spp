@@ -21142,3 +21142,39 @@ div.tagsinput {
   padding-bottom: 2px;
   padding-left: 7px;
 }
+
+.index-kelas .rounded-button-plus {
+  width: 30px;
+  height: 30px;
+  /* background-color: #0f1015; */
+  border-radius: 50%;
+  padding-bottom: 2px;
+  padding-left: 7px;
+}
+
+.index-petugas .rounded-button-plus {
+  width: 30px;
+  height: 30px;
+  /* background-color: #0f1015; */
+  border-radius: 50%;
+  padding-bottom: 2px;
+  padding-left: 7px;
+}
+
+.index-pembayaran .rounded-button-plus {
+  width: 30px;
+  height: 30px;
+  /* background-color: #0f1015; */
+  border-radius: 50%;
+  padding-bottom: 2px;
+  padding-left: 7px;
+}
+
+.index-spp .rounded-button-plus {
+  width: 30px;
+  height: 30px;
+  /* background-color: #0f1015; */
+  border-radius: 50%;
+  padding-bottom: 2px;
+  padding-left: 7px;
+}

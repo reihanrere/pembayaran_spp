@@ -14,9 +14,9 @@ class CreatePembayaransTable extends Migration
     public function up()
     {
         Schema::create('pembayarans', function (Blueprint $table) {
-            $table->integer("id_pembayaran");
+            $table->id("id_pembayaran");
             $table->integer("id_petugas")->nullable();
-            $table->string("nisn")->nullable();
+            $table->string("id_siswa")->nullable();
             $table->string("tgl_bayar");
             $table->string("bln_bayar");
             $table->string("thn_bayar");

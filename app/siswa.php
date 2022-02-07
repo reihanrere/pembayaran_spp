@@ -20,4 +20,8 @@ class siswa extends Model
     ];
 
     protected $primaryKey = "id_siswa";
+
+    public function pembayaran() {
+        return $this->hasMany('App\pembayaran','id_siswa');
+    }
 }

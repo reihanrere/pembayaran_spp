@@ -11,7 +11,7 @@ class kelas extends Model
     protected $fillable = [ 
         "id_kelas",
         "nama_kelas",
-        "kompetensi keahlian",
+        "kompetensi_keahlian",
     ];
 
     protected $primaryKey = "id_kelas";
