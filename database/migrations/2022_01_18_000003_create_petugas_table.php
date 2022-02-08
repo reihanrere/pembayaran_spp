@@ -33,4 +33,8 @@ class CreatePetugasTable extends Migration
     {
         Schema::dropIfExists('petugas');
     }
+    public function boot()
+    {
+        Schema::defaultStringLength(50);
+    }
 }

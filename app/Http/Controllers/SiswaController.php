@@ -10,8 +10,9 @@ class SiswaController extends Controller
     public function SiswaIndex() {
 
         $siswa = siswa::all();
-
-        return view("siswa.index",compact("siswa"));
+        $kelas = \App\kelas::all();
+        // dd($siswa);
+        return view("siswa.index",compact("siswa","kelas"));
 
     }
 

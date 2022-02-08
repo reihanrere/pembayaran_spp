@@ -11,7 +11,7 @@ class SiswaSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i < 10 ; $i++) { 
+        for ($i=0; $i < 5 ; $i++) { 
             DB::table('siswas')->insert([
                 'nisn' => 12345678 + $i,
                 'nis' => 12345678 + $i,
