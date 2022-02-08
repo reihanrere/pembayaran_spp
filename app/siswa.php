@@ -24,4 +24,8 @@ class siswa extends Model
     public function pembayaran() {
         return $this->hasMany('App\pembayaran','id_siswa');
     }
+
+    public function kelas(){
+        return $this->belongsTo('App\kelas','id_kelas');
+    }
 }

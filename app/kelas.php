@@ -15,4 +15,8 @@ class kelas extends Model
     ];
 
     protected $primaryKey = "id_kelas";
+
+    public function siswa(){
+        return $this->hasMany('App\siswa','id_kelas');
+    }
 }

@@ -54,6 +54,10 @@ Route::get('/example/view', function () {
     return view('Example');
 });
 
+Route::get('/pembayaran2', function () {
+    return view('pembayaran.index2');
+});
+
 Route::prefix('api')->group(function () {
     
     Route::get('/example','ExampleController@ExIndex');
@@ -61,5 +65,7 @@ Route::prefix('api')->group(function () {
     Route::post('/example/create','ExampleController@ExCreate');
     Route::get('/example/edit/{id}','ExampleController@ExEdit');
     Route::post('/example/update/{id}','ExampleController@ExUpdate');    
+
+    Route::get('/pembayaran2','PembayaranController@PembayaranIndex2');
 
 });

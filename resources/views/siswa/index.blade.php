@@ -32,6 +32,7 @@
                                     <th>NISN</th>
                                     <th>NIS</th>
                                     <th>Nama</th>
+                                    <th>Kelas</th>
                                     <th>Alamat</th>
                                     <th>No Telp</th>
                                     <th></th>
@@ -43,6 +44,7 @@
                                     <td>{{$siswa->nisn}}</td>
                                     <td>{{$siswa->nis}}</td>
                                     <td>{{$siswa->nama}}</td>
+                                    <td>{{$siswa->kelas->nama_kelas}}</td>
                                     <td>{{$siswa->alamat}}</td>
                                     <td>{{$siswa->no_telp}}</td>
                                     <td>
@@ -95,6 +97,20 @@
                     <label for="exampleInputPassword1">Nama</label>
                     <input type="text" name="nama" value="{{old('nama')}}" class="form-control form-control-sm @error('nama') is-invalid @enderror" id="exampleInputPassword1" required>
                     @error('nama')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="exampleSelectGender">Gender</label>
+                    <select class="form-control form-control-sm @error('id_kelas') is-invalid @enderror" name="id_kelas" id="exampleSelectGender">
+                        @foreach ($kelas as $kelas)
+                            <option value="{{$kelas->id_kelas}}">{{$kelas->nama_kelas}}</option>
+                            @var_dump($kelas)
+                        @endforeach
+                    </select>
+                    @error('id_kelas')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>

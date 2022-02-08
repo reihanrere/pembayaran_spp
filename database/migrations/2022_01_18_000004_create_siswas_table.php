@@ -18,10 +18,10 @@ class CreateSiswasTable extends Migration
             $table->char("nisn");
             $table->char("nis");
             $table->string("nama");
-            $table->integer("id_kelas")->nullable();
+            $table->foreignId('id_kelas')->constrained()->references('id_kelas')->on('kelas')->nullable();
             $table->text("alamat");
             $table->string("no_telp");
-            $table->integer("id_spp")->nullable();
+            $table->foreignId('id_spp')->constrained()->references('id_spp')->on('spps')->nullable();
             $table->timestamps();
         });
     }
@@ -34,5 +34,9 @@ class CreateSiswasTable extends Migration
     public function down()
     {
         Schema::dropIfExists('siswas');
+    }
+    public function boot()
+    {
+        Schema::defaultStringLength(50);
     }
 }
